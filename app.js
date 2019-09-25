@@ -16,6 +16,9 @@ app.use(bodyParser.json());
 app.use(cors("*"));
 app.use(helmet({ xssFilter: true }));
 app.use("/api", router);
+app.get("/", (req, res) => {
+  res.send({ msg: "Hello" });
+});
 
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
